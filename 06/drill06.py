@@ -2,6 +2,7 @@ from pico2d import *
 import math
 
 
+
 open_canvas()
 hide_lattice()
 grass = load_image('grass.png')
