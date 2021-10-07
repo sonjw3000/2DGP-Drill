@@ -30,14 +30,14 @@ def moveChar(x, y, offset):
 
 
 def handle_events():
-    global loop
+	global loop
 
-    events = get_events()
-    for event in events:
-        if event.type == SDL_QUIT:
-            loop = False
-        elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
-            loop = False 
+	events = get_events()
+	for event in events:
+		if event.type == SDL_QUIT:
+			loop = False
+		elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
+			loop = False 
 
 
 open_canvas()
