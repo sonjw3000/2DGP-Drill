@@ -19,20 +19,11 @@ class Ball:
 
     def update(self):
         self.y -= self.falling_speed
-        if self.y - 21 - 20 * self.bBig <= 62:
+        if self.y - (21 + self.bBig * 20) <= 90:
             self.falling_speed = 0
-            self.y = 62 + 21 + 20 * self.bBig
 
     def draw(self):
-        self.image.draw(self.x, self.y)
-
-
-class Grass:
-    def __init__(self):
-        self.image = load_image('drill-10/run_animation.png')
-
-    def draw(self):
-        self.image.draw(400, 30)
+        self.image.clip_draw(0, 0, 21 + self.bBig * 20, 21 + self.bBig * 20, self.x, self.y)
 
 
 class Boy:
@@ -72,14 +63,13 @@ def draw():
         ball.draw()
     for boy in boys:
         boy.draw()
-    grass.draw()
 
 
 # initialization code
 running = True
-grass = Grass()
 boys = [Boy() for i in range(20)]
 balls = [Ball() for i in range(20)]
+
 
 # game main loop code
 
